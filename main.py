@@ -42,8 +42,6 @@ async def help(ctx, message=None):
         em.add_field(name=f"`{p}help logging`", value="Dieser Command zeigt dir alle Logging Commands an.")
         em.add_field(name=f"`{p}help feedback`",
                      value="Dieser Command zeigt dir alle Feedback und Bug-Report Commands an.")
-        em.add_field(name=f"`{p}help automod`",
-                     value="Dieser Command zeigt dir Hilfe zu unseren automatischen Moderations Funktionen an.")
         em.add_field(name=f"`Probleme?`",
                      value="Wenn du einen Fehler gefunden hast, oder Hilfe brauchst, joine gerne auf unseren Discord-Server: discord.gg/V3svjsdn47.")
         em.set_footer(text=f"{bot.user.name} by BuilderJG#4088")
@@ -155,15 +153,6 @@ async def help(ctx, message=None):
                      value="Dieser Command sendet dein Feedback an den Botowner (Achtung: Ausnutzung kann zum Ausschluss von dieser Funktion führen).")
         em.add_field(name=f"`{p}report`",
                      value="Dieser Command sagt dir, wie du einen Bug melden kannt.")
-        await ctx.send(embed=em)
-    elif message == "automod":
-        em = discord.Embed(title=bot.user.name + " Automoderator Funktionen Übersicht", description="",
-                           color=discord.Color.blue())
-        em.add_field(name="`AntiInvite`",
-                     value="Es werden automatisch alle Nachrichten, die einen Discord Invitelink beinhalten gelöscht, sofern der Nutzer nicht die Berechtigung Links einbetten hat")
-        em.add_field(name="`AntiLink`",
-                     value="Es werden automatisch alle Nachrichten die ein https:// oder ein http:// enthalten gelöscht, sofern der Nutzer nicht die Berechtigung Links einbetten hat. (überspringt GIFs)")
-        em.set_footer(text=f"{bot.user.name} by BuilderJG#4088")
         await ctx.send(embed=em)
     else:
         await help(ctx, None)
